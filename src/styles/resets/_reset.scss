@@ -1,9 +1,9 @@
 :root {
   --base-color: #111111;
   --base-cont: #ffffff;
-  --main-color: #adff2f;
+  --main-color: #0B365C;
   --main-color-cont: #111111;
-  --accent-color: #D1432A;
+  --accent-color: #4A9500;
   --accent-cont: #ffffff;
   --max-width: 1280px;
   --breakpoint-sm: 640px;
@@ -12,13 +12,13 @@
   --breakpoint-xl: 1280px;
 }
 body {
-  color: var(--base-cont);
-  background: var(--base-color);
+  color: var(--base-color);
+  background: var(--base-cont);
   line-height: 2;
   letter-spacing: 0.1em;
   overflow-x: hidden;
   max-width: 100%;
-  font-family: "Source Han Serif", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
 }
 main {
   padding-bottom: 3rem;

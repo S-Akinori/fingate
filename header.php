@@ -21,16 +21,27 @@
 </head>
 <body>
   <header class="header">
-    <div class="flex justify-between items-center">
-      <div class="c-logo"><a href="<?= home_url(); ?>"><img src="<?= get_option('company_logo'); ?>" width="50" height="50" alt="<?= get_option('company_name'); ?>" /></a></div>
-      <div>
-        <a class="c-button" href="tel:<?= get_option('company_tel'); ?>">ご注文：<?= get_option('company_tel'); ?></a>
+    <div class="header__inner">
+      <div class="c-logo"><a href="<?= home_url(); ?>"><img src="<?= get_template_directory_uri() .'/assets/images/logo.png' ?>" alt="<?= get_option('company_name'); ?>" /></a></div>
+      <div class="flex">
+        <nav class="c-nav">
+          <ul class="c-nav__list">
+            <li class="c-nav__list__item"><a href="">ABOUT</a></li>
+            <li class="c-nav__list__item"><a href="">FACILITY</a></li>
+            <li class="c-nav__list__item"><a href="">INCUBATION</a></li>
+            <li class="c-nav__list__item"><a href="">COMMUNITY</a></li>
+            <li class="c-nav__list__item"><a href="">EVENT</a></li>
+            <li class="c-nav__list__item"><a href="">NEWS</a></li>
+            <li class="c-nav__list__item"><a href="">BLOG</a></li>
+            <li class="c-nav__list__item"><a href="">CONTACT</a></li>
+          </ul>
+        </nav>
+        <button class="js-menu-button flex items-center justify-center">
+          <span class="material-icons">
+            menu
+          </span>
+        </button>
       </div>
-      <!-- <button class="js-menu-button flex items-center justify-center">
-        <span class="material-icons">
-          menu
-        </span>
-      </button> -->
     </div>
   </header>
   <!-- <div id="jsNav" class="l-nav-container">

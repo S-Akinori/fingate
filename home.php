@@ -1,137 +1,129 @@
-<?php 
-  $args = array(
-    'post_type' => 'menus', // カスタム投稿タイプの名前
-    'posts_per_page' => -1, // すべての投稿を表示する場合
-    'tax_query' => array(
-      array(
-          'taxonomy' => 'menus-cat', // カスタムタクソノミーの名前
-          'field'    => 'slug',
-          'terms'    => 'sushi-roulette', // タームのスラッグ
-      ),
+<?php
+$args = array(
+  'post_type' => 'menus', // カスタム投稿タイプの名前
+  'posts_per_page' => -1, // すべての投稿を表示する場合
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'menus-cat', // カスタムタクソノミーの名前
+      'field'    => 'slug',
+      'terms'    => 'sushi-roulette', // タームのスラッグ
     ),
-  );
-  
-  $menus = get_posts($args);
+  ),
+);
+
+$menus = get_posts($args);
 ?>
 <?php get_header(); ?>
-  <div class="c-fv">
-    <div class="c-fv__image"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fv-top.jpg" alt="" /></div>
+<div class="c-fv">
+  <div class="c-fv__text">
+    <span class="text-7xl font-bold">CREATING</span><br>
+    <span class="text-6xl font-bold">A COMMUNITY</span><br>
+    <span class="text-xl font-bold">WHERE PEOPLE COME AND GROW TOGETHER</span>
   </div>
-  <section class="c-section text-center">
-    <h2 class="c-title">お客様もホステスさんも一緒に盛り上がる</h2>
-    <div>
-      <p>お店でお食事しながらゲームで盛り上がりたい</p>
-      <p>寿司バー琴ではそのような機会をお届けします。</p>
-      <p>それが「寿司アンルーレット」です。</p>
+</div>
+<div class="p-top-blogs">
+  <div class="p-top-blog c-blog-list-container">
+    <div class="c-blog-list-container__titles">
+      <div class="c-blog-list-container__title">NEWS</div>
+      <div><a href="">一覧 ></a></div>
     </div>
-  </section>
-  <section class="c-section">
-    <h2 class="c-title text-center">寿司アンルーレットの特徴</h2>
-    <div class="c-imageText">
-      <div class="c-imageText__wrapper">
-        <div class="c-imageText__image">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature1.jpg" alt="" />
+    <div class="c-blog-list">
+      <div class="c-blog-list__item">
+        <div class="c-blog-list__item__image">
+          <img src="<?= get_template_directory_uri() . '/assets/images/logo2.png' ?>" alt="">
         </div>
-      </div>
-      <div class="c-imageText__wrapper md:p-8">
-        <h3 class="c-imageText__title">遊び方は無限大</h3>
-        <div>
-          <p>寿司アンルーレットは一部の巻物に大量のわさびを隠し入れています。</p>
-          <p>順番に食べていくも良し、じゃんけんで負けた人が食べていくのも良し。</p>
-          <p>様々な方法で盛り上がることができます。</p>
-          <p>寿司バー琴では寿司アンルーレットと絡めた遊びの例も出前の際にお伝えしています。</p>
+        <div class="c-blog-list__item__text">
+          <div class="c-blog-list__item__text__date">2023.10.12</div>
+          <div class="c-blog-list__item__text__title"><a href="">ウェブサイトをリニューアルしました。</a></div>
         </div>
-      </div>
-    </div>
-    <div class="c-imageText flex-row-reverse	">
-      <div class="c-imageText__wrapper">
-        <div class="c-imageText__image">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature2.jpg" alt="" />
-        </div>
-      </div>
-      <div class="c-imageText__wrapper md:p-8">
-        <h3 class="c-imageText__title">人数に合わせた簡潔なコース設定</h3>
-        <div>
-          <p>人数に合わせて、コースをお選びいただけます。</p>
-          <p>選びやすく料金もシンプルなのでその場ですぐ注文することができます。</p>
-        </div>
-      </div>
-    </div>
-    <div class="c-imageText">
-      <div class="c-imageText__wrapper">
-        <div class="c-imageText__image">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature3.jpg" alt="" />
-        </div>
-      </div>
-      <div class="c-imageText__wrapper md:p-8">
-        <h3 class="c-imageText__title">３０分で配達</h3>
-        <div>
-          <p>六本木に構えるお店に特化しているため、他のお寿司よりも早い配達が可能です。電話での注文も承っておりますので、お客様がいるその場で注文いただきすぐに配達をいたします。</p>
-          <p>※ 注文内容や混雑具合で配達時間が変動します。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="c-section">
-    <h2 class="c-title text-center">さっそく寿司アンルーレットを楽しみましょう</h2>
-    <div class="md:flex">
-    <?php foreach ($menus as $post) : setup_postdata($post); ?>
-      <div class="mb-8 md:w-1/3 p-4 p-menu">
-        <div class="p-menu__image">
-          <img src="<?= has_post_thumbnail() ? get_the_post_thumbnail_url('', 'full') : get_template_directory_uri() . '/dist/img/no-image.jpg' ?>" width="1200" height="800" alt="<?php the_title(); ?>">
-        </div>
-        <div class="p-menu__text">
-          <h3 class="p-menu__title"><?php the_title(); ?></h3>
-          <p><?php echo esc_html(get_the_excerpt()); ?></p>
-        </div>
-      </div>
-      <?php endforeach; wp_reset_postdata(); ?>
-    </div>
-  </section>
-  <div class="c-section">
-    <div class="c-banner">
-      <div class="c-title text-center text-base-color">ご注文はお電話またはLINEでお受けします。</div>
-      <div class="mb-8 text-center"><a href="tel:080-4755-5766" class="c-button">080-4755-5766</a></div>
-      <div class="text-center">
-        <a href="https://lin.ee/a2GU33m">
-          <img class="inline mx-auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/line.png" alt="" width="100" height="100">
-        </a>
       </div>
     </div>
   </div>
-  <section class="c-section">
-    <h2 class="c-title text-center">店舗情報</h2>
-    <div class="md:flex justify-center">
-      <div class="flex md:block justify-center">
-        <div class="p-4 mb-4 md:px-4">
-          <img src="<?= get_option('company_logo'); ?>" width="150" height="150" alt="<?= get_option('company_name'); ?>" />
+  <div class="p-top-blog c-blog-list-container">
+    <div class="c-blog-list-container__titles">
+      <div class="c-blog-list-container__title !text-accent">EVENT</div>
+      <div><a href="">一覧 ></a></div>
+    </div>
+    <div class="c-blog-list">
+      <div class="c-blog-list__item">
+        <div class="c-blog-list__item__image">
+          <img src="<?= get_template_directory_uri() . '/assets/images/logo2.png' ?>" alt="">
         </div>
-        <div class="p-4 mb-4 md:mb-0 md:px-4">
-          <a href="<?= get_option('company_line') ?>">
-            <img src="<?= get_option('company_line_qr'); ?>" width="150" height="150" alt="<?= get_option('company_name'); ?>" />
-          </a>
-        </div>
-      </div>
-      <div class="md:px-4 pl-4">
-        <h3 class="text-main"><?= get_option('company_name'); ?></h3>
-        <div>
-          <div class="md:flex mb-4 pb-4 border-b border-main2">
-            <div class="w-32 pr-4"><?= get_option('company_tel_title'); ?></div>
-            <div class="whitespace-pre-wrap"><a href="tel:<?= get_option('company_tel'); ?>"><?= get_option('company_tel'); ?></a></div>
-          </div>
-          <div class="md:flex mb-4 pb-4 border-b border-main2">
-            <div class="w-32 pr-4"><?= get_option('company_hours_title'); ?></div>
-            <div class="whitespace-pre-wrap"><?= get_option('company_hours'); ?></div>
-          </div>
-          <div class="md:flex mb-4 pb-4 border-b border-main2">
-            <div class="w-32 pr-4"><?= get_option('company_dayoff_title'); ?></div>
-            <div class="whitespace-pre-wrap"><?= get_option('company_dayoff'); ?></div>
-          </div>
-        </div>
-        <div class="text-sm">
-          <?= get_option('company_info_sub'); ?>
+        <div class="c-blog-list__item__text">
+          <div class="c-blog-list__item__text__date">2023.10.12</div>
+          <div class="c-blog-list__item__text__title"><a href="">イベント情報を公開しました。</a></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+<section class="c-section bg-gray">
+  <div class="c-en-title">MISSION</div>
+  <img class="absolute right-0 bottom-0 w-1/2 max-w-2xl" src="<?= get_template_directory_uri() . '/assets/images/image-mission.png' ?>" alt="">
+  <h2 class="c-title">MISSION</h2>
+  <p class="c-section__text md:w-1/2">多様な属性・立場の人が、同じチャレンジャーとして出会う”場”づくりを通し、「人が集い、投資と成長がうまれる」”コミュニティ”を創造する。</p>
+  <a class="c-button" href="">FinGATEについて</a>
+</section>
+<section class="c-section">
+  <div class="c-imageText">
+    <div class="c-imageText__wrapper">
+      <div class="c-imageText__image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service.png" alt="" />
+      </div>
+    </div>
+    <div class="c-imageText__wrapper md:p-8">
+      <div class="c-en-title">SERVICE</div>
+      <h3 class="c-title">SERVICE</h3>
+      <div class="font-bold">
+        <p> ”FinGATE”は、資産運用会社・フィンテック等の金融系スタート
+          アップを中心に、あらゆる起業家・スタートアップの起業・成長を
+          支えるプラットフォームです。</p>
+        <p>「オフィス」「インキュベーション」「コミュニティ」の運営を通じ、
+          創業からその後の成長までをサポートいたします。</p>
+      </div>
+    </div>
+  </div>
+  <div class="c-imageText c-imageText--reverse">
+    <div class="c-imageText__wrapper">
+      <div class="c-imageText__image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/office.png" alt="" />
+      </div>
+    </div>
+    <div class="c-imageText__wrapper md:p-8">
+      <div class="c-imageText__enTitle">OFFICE</div>
+      <h3 class="c-imageText__title">OFFICE</h3>
+      <div class="">
+        <p> 創業期のコワーキングスペースから、数名から数十名まで入居可能な個室オフィス、入退去の手間なく利用が可能なセットアップオフィス等、スタートアップの成長に併せたオフィス環境を提供しております。2023年10月時点では、5施設100社以上の受入可能なオフィスを提供しており、安全なセキュリティ環境から、リラックスできるラウンジ・コミュニティスぺース、100名以上で利用可能な専用のイベントスペース等、成長を支えるための場を提供しております。</p>
+      </div>
+    </div>
+  </div>
+  <div class="c-imageText">
+    <div class="c-imageText__wrapper">
+      <div class="c-imageText__image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/incubation.png" alt="" />
+      </div>
+    </div>
+    <div class="c-imageText__wrapper md:p-8">
+      <div class="c-imageText__enTitle">INCUBATION</div>
+      <h3 class="c-imageText__title">INCUBATION</h3>
+      <div class="">
+        <p>FinGATEでは、平和不動産が連携するベンチャーキャピタルによる「アクセラレータープログラム」の運営が行われており、創業前からシード期のスタートアップを対象にその起業・成長を支援しております。また、弁護士・税理士・行政書士法人やコンサル・金融情報ベンダー等、多様なパートナー企業と連携し、専門分野のプロフェッショナルの紹介から各社サービスの導入支援を行っております。</p>
+      </div>
+    </div>
+  </div>
+  <div class="c-imageText c-imageText--reverse">
+    <div class="c-imageText__wrapper">
+      <div class="c-imageText__image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/community.png" alt="" />
+      </div>
+    </div>
+    <div class="c-imageText__wrapper md:p-8">
+      <div class="c-imageText__enTitle">COMMUNITY</div>
+      <h3 class="c-imageText__title">COMMUNITY</h3>
+      <div class="">
+        <p>FinGATEのコミュニティには、投資家・スタートアップ・行政機関・大手企業等が参加しており、コミュニティ参加者はコミュニティラウンジの利用や、限定のイベント・交流会への参加を通じ、参加者同士のマッチングを促進。コミュニティへの参加には、オフィスへの入居又は「FinGATE CLUB」という無償の招待制会員制度に登録することで参加が可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
 <?php get_footer(); ?>

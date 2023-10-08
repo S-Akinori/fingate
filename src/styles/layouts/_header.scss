@@ -3,9 +3,15 @@
 .header {
   position: fixed;
   z-index: 9999;
-  background: g.$base_color;
-  color: g.$base_color_cont;
+  background: g.$main_color;
+  color: g.$main_color_cont;
   padding: 1rem;
   min-height: 80px;
   width: 100%;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

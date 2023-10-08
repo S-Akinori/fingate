@@ -1,6 +1,10 @@
 .c-fv {
-  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
   position: relative;
+  background: url(images/bg-fv.png) no-repeat center center / cover;
 }
 .c-fv__image {
   width: 100%;

@@ -3,11 +3,31 @@
 .c-imageText {
   display: block;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   @include g.md {
     display: flex;
-    margin-bottom: 0;
+    // margin-bottom: 0;
   }
+}
+.c-imageText--reverse {
+  flex-direction: row-reverse;
+}
+
+.c-imageText__enTitle {
+  position: absolute;
+  font-size: 5rem;
+  opacity: .3;
+  font-weight: bold;
+  line-height: 1;
+  background: linear-gradient(to right, #3CC37A, g.$main_color_sub); /* グラデーションの色と方向を設定 */
+  -webkit-background-clip: text; /* Webkit ブラウザ向け */
+  background-clip: text;
+  color: transparent; /* テキストの元の色を透明にします */
+}
+.c-imageText__title {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
 }
 .c-imageText__wrapper {
   // width: 50%;

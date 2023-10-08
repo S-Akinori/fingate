@@ -1,7 +1,16 @@
 @use '../global/' as g;
 .c-button {
-  padding: .5rem 1rem;
-  border-radius: 100vh;
-  background: g.$accent_color;
-  color: g.$base_color_cont;
+  position: relative;
+  padding: 1rem 3rem;
+  background: g.$main_color;
+  color: g.$main_color_cont;
+  font-weight: bold;
+}
+
+.c-button::after {
+  content: '>';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }

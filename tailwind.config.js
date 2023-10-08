@@ -6,15 +6,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-    colors: {
-      'base': '#111111',
-      'base-color': '#111111',
-      'base-cont': '#ffffff',
-      'main': '#adff2f',
-      'main-cont': '#111111',
-      'accent': '#D1432A',
-      'accent-cont': '#ffffff',
-    },
+      colors: {
+        'base': '#111111',
+        'base-color': '#111111',
+        'base-cont': '#ffffff',
+        'main': '#0B365C',
+        'main-cont': '#111111',
+        'accent': '#4A9500',
+        'accent-cont': '#ffffff',
+        'gray': '#AAAAAA29',
+      },
     },
   },
   plugins: [],

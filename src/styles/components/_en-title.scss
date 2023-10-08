@@ -1,0 +1,17 @@
+@use '../global/' as g;
+
+.c-en-title {
+  position: absolute;
+  font-size: 8rem;
+  color: g.$main_color_sub;
+  opacity: .3;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.c-en-title--gradient {
+  background: linear-gradient(to right, #3CC37A, g.$main_color_sub); /* グラデーションの色と方向を設定 */
+  -webkit-background-clip: text; /* Webkit ブラウザ向け */
+  background-clip: text;
+  color: transparent; /* テキストの元の色を透明にします */
+}

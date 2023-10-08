@@ -1,29 +1,40 @@
 <div class="hidden fixed bottom-0 left-0 p-4 w-full bg-main" style="z-index: 9999;">
-    <div class="flex">
-      <a href="" class="c-button">ご予約: 000-0000-000</a>
-    </div>
+  <div class="flex">
+    <a href="" class="c-button">ご予約: 000-0000-000</a>
   </div>
+</div>
 </main>
 <footer class="footer">
   <div class="c-container mx-auto">
     <div class="footer__top">
-      <div class="c-logo mx-auto md:ml-0 md:mr-auto mb-4"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></div>
-      <div class="text-center md:text-left whitespace-pre-wrap"><?= get_option('company_address'); ?></div>
+      <div class="flex">
+        <div class="p-4"><img src="<?= get_template_directory_uri() . '/assets/images/footer1.png' ?>" alt=""></div>
+        <div class="p-4"><img src="<?= get_template_directory_uri() . '/assets/images/footer2.png' ?>" alt=""></div>
+        <div class="p-4"><img src="<?= get_template_directory_uri() . '/assets/images/footer3.png' ?>" alt=""></div>
+        <div class="p-4"><img src="<?= get_template_directory_uri() . '/assets/images/footer4.png' ?>" alt=""></div>
+        <div class="p-4"><img src="<?= get_template_directory_uri() . '/assets/images/footer5.png' ?>" alt=""></div>
+      </div>
     </div>
-    <!-- <div>
-      <ul class="footer__link-list">
-        <li class="footer__link-list__item"><a class="<?= is_front_page() ? 'js-anchorLink' : ''; ?>" href="<?= is_front_page() ? '#topMessage' : home_url("#topMessage"); ?>">メッセージ</a></li>
-        <li class="footer__link-list__item"><a class="<?= is_front_page() ? 'js-anchorLink' : ''; ?>" href="<?= is_front_page() ? '#topFeatures' : home_url("#topFeatures"); ?>">3つの特徴</a></li>
-        <li class="footer__link-list__item"><a class="<?= is_front_page() ? 'js-anchorLink' : ''; ?>" href="<?= is_front_page() ? '#topMenu' : home_url("#topMenu"); ?>">メニュー</a></li>
-        <li class="footer__link-list__item"><a class="<?= is_front_page() ? 'js-anchorLink' : ''; ?>" href="<?= is_front_page() ? '#topReview' : home_url("#topReview"); ?>">お客様の声</a></li>
-        <li class="footer__link-list__item"><a class="<?= is_front_page() ? 'js-anchorLink' : ''; ?>" href="<?= is_front_page() ? '#topBlog' : home_url("#topBlog"); ?>">ブログ</a></li>
-        <li class="footer__link-list__item"><a class="<?= is_front_page() ? 'js-anchorLink' : ''; ?>" href="<?= is_front_page() ? '#topContact' : home_url("#topContact"); ?>">サロン情報</a></li>
-      </ul>
-    </div> -->
+    <div class="footer__middle">
+      <div class="c-logo mx-auto md:ml-0 md:mr-auto mb-4"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></div>
+      <nav class="c-nav">
+        <ul class="c-nav__list">
+          <li class="c-nav__list__item"><a href="">ABOUT</a></li>
+          <li class="c-nav__list__item"><a href="">FACILITY</a></li>
+          <li class="c-nav__list__item"><a href="">INCUBATION</a></li>
+          <li class="c-nav__list__item"><a href="">COMMUNITY</a></li>
+          <li class="c-nav__list__item"><a href="">EVENT</a></li>
+          <li class="c-nav__list__item"><a href="">NEWS</a></li>
+          <li class="c-nav__list__item"><a href="">BLOG</a></li>
+          <li class="c-nav__list__item"><a href="">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
     <div class="text-center text-sm">&copy;2023 <?= get_option('company_name'); ?></div>
   </div>
 </footer>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/main.js"></script>
 <?php wp_footer(); ?>
 </body>
+
 </html>
